@@ -2,7 +2,7 @@ const Engine = Matter.Engine;
 const Bodies = Matter.Bodies;
 const World = Matter.World;
 
-var tSound,rSound;
+
 var engine,world;
 var t,t1,t2,t3,t4, r;
 var man;
@@ -16,8 +16,7 @@ function preload(){
     t3 = loadImage("3.png");
     t4 = loadImage("4.png");
 
-    tSound = loadSound("t.mp3");
-    rSound = loadSound("rain.mp3");
+
 
 }
 
@@ -44,10 +43,6 @@ function draw(){
 
     man.scale = 1;
 
-    if(frameCount === 1 || frameCount % 200 === 0){
-        rSound.play();
-    }
-
     for(var p = 0 ; p < maxDrops ; p++){
         dropArray[p].updatePos();
         dropArray[p].display();
@@ -56,7 +51,7 @@ function draw(){
     if(frameCount % 200 === 0){
         t = createSprite(random(0,1500),0);
 
-        tSound.play();
+
 
         r = Math.round(1,4);
 
